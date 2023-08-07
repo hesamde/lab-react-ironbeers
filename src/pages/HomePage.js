@@ -8,7 +8,7 @@ function HomePage() {
         <div className="home-page">
             <div>
                     <img className="home-img" src={beersImg} alt="beers" /> <br />
-                    <Link className="link-name" to="/beers">All Beers </Link>
+                    <Link className="link-name" to="/beer">All Beers </Link>
                     <p className="home-page-p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
                     numquam molestiae odit, atque quaerat dolor quisquam eligendi voluptas
@@ -30,7 +30,7 @@ function HomePage() {
 
             <div>
                     <img className="home-img" src={newBeer} alt="beers" /> <br />
-                    <Link className="link-name" to="/new-beers">New Beer</Link>
+                    <Link className="link-name" to="/new-beer">New Beer</Link>
                     <p className="home-page-p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
                     numquam molestiae odit, atque quaerat dolor quisquam eligendi voluptas
