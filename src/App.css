@@ -21,16 +21,6 @@
   flex-direction: column;
 }
 
-.home-img {
-  width: 100%;
-  height: auto;
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 30px;
-  color: black;
-}
-
 @media (min-width: 425px) {
   .home-page {
     display: flex;
@@ -55,8 +45,6 @@
     height: auto;
     text-decoration: none;
     display: flex;
-    font-size: 30px;
-    color: black;
   }
 }
 /* Iteration 1 */

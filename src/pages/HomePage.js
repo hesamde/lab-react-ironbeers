@@ -8,8 +8,8 @@ import newBeer from "../assets/new-beer.png"
 function HomePage() {
     return (
 
-            <div className="home-page" >
-                    <div>
+            <div >
+                <div>
                     <Link to="/beers" className="link-name">
                         <img className="home-img" src={beersImg} alt="beers" />
                         <br/>
@@ -37,10 +37,10 @@ function HomePage() {
                     alias quo deleniti, accusantium, quis commodi! Eveniet eligendi alias
                     corporis id.
                     </p>
-            </div>
+                </div>
 
                 <div >
-                <Link to="/beers" className="link-name">
+                    <Link to="/beers" className="link-name">
                         <img className="home-img" src={newBeer} alt="beers" />
                         <br/>
                         <br/>
