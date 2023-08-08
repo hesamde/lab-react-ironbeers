@@ -39,7 +39,7 @@ function RandomBeer() {
             <p>Loading...</p>
         )}
         </>
-    )
+    );
 }
 
 export default RandomBeer
