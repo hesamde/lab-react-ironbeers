@@ -23,9 +23,7 @@ function Beers() {
                 return (
                     <div key={beerJan._id}>
                             <div>
-                                {beerJan.image_url && (<Link to={`/beers/${beerJan._id}`}>
-                    <img src={beerJan.image_url} alt={beerJan.name} />
-                  </Link>)}
+                                {beerJan.image_url && (<Link to={`/beers/${beerJan._id}`}><img src={beerJan.image_url} alt={beerJan.name} /></Link>)}
                             </div>
                             <div>
                                 <h1>{beerJan.name}</h1>
