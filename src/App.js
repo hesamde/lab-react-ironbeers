@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Beers from "./pages/Beers";
 import RandomBeer from "./pages/RandomBeer";
 import NewBeer from "./pages/NewBeer";
+import BeerDetails from "./pages/BeerDetails";
+
 function App() {
   return (
     <div>
@@ -13,6 +15,7 @@ function App() {
         <Route path='/beers' element={<Beers />} />
         <Route path='/RandomBeer' element={<RandomBeer />} />
         <Route path='/NewBeer' element={<NewBeer />} />
+        <Route path="/beers/:id" element={<BeerDetails />} />
     </Routes>
     </div>
   );
