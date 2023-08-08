@@ -29,7 +29,7 @@ function HomePage() {
                         <img className="home-img" src={randomBeer} alt="beers" />
                         <br/>
                         <br/>
-                        <span className="link-name">New Beer </span>
+                        <span className="link-name">Random Beer </span>
                     </Link>
                     <p className="home-page-p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
@@ -44,7 +44,7 @@ function HomePage() {
                         <img className="home-img" src={newBeer} alt="beers" />
                         <br/>
                         <br/>
-                        <span className="link-name">All Beers </span>
+                        <span className="link-name">New Beers </span>
                     </Link>
                         <p className="home-page-p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem

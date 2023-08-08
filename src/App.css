@@ -45,9 +45,8 @@
     height: auto;
   }
   .link-name {
-    text-decoration: none; /* Remove text underline */
+    text-decoration: none;
     display: flex;
-
     font-size: 30px;
     color: black;
   }
