@@ -12,7 +12,7 @@ function Beers() {
 
     const getBeersArr = () => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/`)
+            .get(`https://ih-beers-api2.herokuapp.com/beers`)
             .then((response) => setBeersArr(response.data))
             .catch((e) =>
             console.log("Error getting the list of beers from the API", e)

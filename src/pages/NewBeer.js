@@ -20,7 +20,7 @@
             e.preventDefault();
 
             axios
-            .post(`${process.env.REACT_APP_API_URL}/new`, inputs)
+            .post(`https://ih-beers-api2.herokuapp.com/beers/new`, inputs)
             .then((message) => {
                 console.log(message);
                 navigate("/beers");

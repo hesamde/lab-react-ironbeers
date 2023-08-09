@@ -9,7 +9,7 @@ function BeerDetails() {
 
     useEffect(() => {
         axios
-        .get(`${process.env.REACT_APP_API_URL}/${id}`)
+        .get(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
         .then((response) => {
             console.log(response.data);
             setBeerDetails(response.data);

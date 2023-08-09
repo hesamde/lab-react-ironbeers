@@ -25,8 +25,8 @@ function HomePage() {
                 </div>
 
                 <div>
-                    <Link to="/beers" className="link-name">
-                        <img className="home-img" src={randomBeer} alt="beers" />
+                    <Link to="/RandomBeer" className="link-name">
+                        <img className="home-img" src={randomBeer} alt="RandomBeer" />
                         <br/>
                         <br/>
                         <span className="link-name">Random Beer </span>
@@ -40,8 +40,8 @@ function HomePage() {
                 </div>
 
                 <div >
-                    <Link to="/beers" className="link-name">
-                        <img className="home-img" src={newBeer} alt="beers" />
+                    <Link to="/NewBeer" className="link-name">
+                        <img className="home-img" src={newBeer} alt="NewBeer" />
                         <br/>
                         <br/>
                         <span className="link-name">New Beers </span>

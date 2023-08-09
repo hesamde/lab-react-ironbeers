@@ -10,7 +10,7 @@ function RandomBeer() {
     const [randomBeer, setRandomBeer] = useState(null)
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/random`)
+        axios.get(`https://ih-beers-api2.herokuapp.com/beers/random`)
                 .then(response => setRandomBeer(response.data))
                 .catch(e => console.log("Error getting random beer from the API", e))
     }, [])
