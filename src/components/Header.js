@@ -1,15 +1,19 @@
+import React from "react";
+import headerImg from "../assets/header.png";
 import { Link } from "react-router-dom";
 
 function Header() {
-    return (
-        <>
-            <Link to="/">
-                <img
-                src="https://user-images.githubusercontent.com/23629340/40707029-cb2fce12-63ef-11e8-939c-f673ff3b965d.png"
-                alt="HeaderLink"/>
-            </Link>
-        </>
-    );
-    }
+  return (
+    <Link to="/">
+      <nav>
+        <img
+          src={headerImg}
+          alt="home"
+          style={{ width: "100%", marginBottom: "20px" }}
+        />
+      </nav>
+    </Link>
+  );
+}
 
 export default Header;

@@ -8,16 +8,15 @@ import BeerDetails from "./pages/BeerDetails";
 
 
 function App() {
-
   return (
-    <div>
-    <Routes>
-        <Route path="/" element={ <HomePage /> } />
-        <Route path='/beers' element={<Beers />} />
-        <Route path='/RandomBeer' element={<RandomBeer />} />
-        <Route path='/NewBeer' element={<NewBeer />} />
-        <Route path="/beers/:id" element={<BeerDetails />} />
-    </Routes>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/beers" element={<Beers />} />
+        <Route path="/random-beer" element={<RandomBeer />} />
+        <Route path="/new-beer" element={<NewBeer />} />
+        <Route path="/beers/:beerId" element={<BeerDetails />} />
+      </Routes>
     </div>
   );
 }

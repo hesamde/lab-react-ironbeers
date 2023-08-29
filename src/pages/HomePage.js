@@ -1,62 +1,57 @@
 import { Link } from "react-router-dom";
-import beersImg from "../assets/beers.png"
-import randomBeer from "../assets/random-beer.png"
-import newBeer from "../assets/new-beer.png"
-
-
+import beersImg from "../assets/beers.png";
+import randomBeerImg from "../assets/random-beer.png";
+import newBeerImg from "../assets/new-beer.png";
 
 function HomePage() {
-    return (
-
-            <div >
-                <div>
-                    <Link to="/beers" className="link-name">
-                        <img className="home-img" src={beersImg} alt="beers" />
-                        <br/>
-                        <br/>
-                        <span className="link-name">All Beers </span>
-                    </Link>
-                    <p className="home-page-p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
-                    numquam molestiae odit, atque quaerat dolor quisquam eligendi voluptas
-                    alias quo deleniti, accusantium, quis commodi! Eveniet eligendi alias
-                    corporis id.
-                    </p>
-                </div>
-
-                <div>
-                    <Link to="/RandomBeer" className="link-name">
-                        <img className="home-img" src={randomBeer} alt="RandomBeer" />
-                        <br/>
-                        <br/>
-                        <span className="link-name">Random Beer </span>
-                    </Link>
-                    <p className="home-page-p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
-                    numquam molestiae odit, atque quaerat dolor quisquam eligendi voluptas
-                    alias quo deleniti, accusantium, quis commodi! Eveniet eligendi alias
-                    corporis id.
-                    </p>
-                </div>
-
-                <div >
-                    <Link to="/NewBeer" className="link-name">
-                        <img className="home-img" src={newBeer} alt="NewBeer" />
-                        <br/>
-                        <br/>
-                        <span className="link-name">New Beers </span>
-                    </Link>
-                        <p className="home-page-p">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem
-                        numquam molestiae odit, atque quaerat dolor quisquam eligendi voluptas
-                        alias quo deleniti, accusantium, quis commodi! Eveniet eligendi alias
-                        corporis id.
-                        </p>
-                </div>
-
+  return (
+    <>
+      <div
+        className="d-inline-flex flex-column justify-content-center align-items-center"
+        style={{ maxWidth: "700px" }}
+      >
+        <Link to="/beers">
+          <div className="card" style={{ width: "18rem" }}>
+            <img src={beersImg} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">All Beers</h5>
+              <p className="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                pellentesque interdum metus non venenatis. Nulla facilisi.
+                Mauris tristique neque sit amet velit placerat scelerisque.
+              </p>
             </div>
-
-    );
-    }
+          </div>
+        </Link>
+        <Link to="/random-beer">
+          <div className="card" style={{ width: "18rem" }}>
+            <img src={randomBeerImg} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">Random Beer</h5>
+              <p className="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                pellentesque interdum metus non venenatis. Nulla facilisi.
+                Mauris tristique neque sit amet velit placerat scelerisque.
+              </p>
+            </div>
+          </div>
+        </Link>
+        <Link to="/new-beer">
+          <div className="card" style={{ width: "18rem" }}>
+            <img src={newBeerImg} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">New Beer</h5>
+              <p className="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                pellentesque interdum metus non venenatis. Nulla facilisi.
+                Mauris tristique neque sit amet velit placerat scelerisque.
+              </p>
+            </div>
+          </div>
+        </Link>
+      </div>
+    </>
+  );
+}
 
 export default HomePage;

@@ -1,121 +1,140 @@
-    import { useState } from "react";
-    import Header from "../components/Header";
-    import axios from "axios";
-    import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Header from "../components/Header";
 
-    function NewBeer() {
-        const navigate = useNavigate();
+const apiURL = "https://ih-beers-api2.herokuapp.com/beers";
 
-        const [inputs, setInputs] = useState({});
+function NewBeer() {
+    const [name, setName] = useState("");
+    const [tagline, setTagline] = useState("");
+    const [description, setDescription] = useState("");
+    const [first_brewed, setFirst_Brewed] = useState("");
+    const [brewers_tips, setBrewers_Tips] = useState("");
+    const [attenuation_level, setAttenuation_Level] = useState(0);
+    const [contributed_by, setContributed_By] = useState("");
 
-        const handleOnchange = (e) => {
-            setInputs((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value,
-            }));
-            console.log(inputs);
+    const navigate = useNavigate();
+
+  // handler functions
+    const handleName = (e) => setName(e.target.value);
+    const handleTagline = (e) => setTagline(e.target.value);
+    const handleDescription = (e) => setDescription(e.target.value);
+    const handleFirst_Brewed = (e) => setFirst_Brewed(e.target.value);
+    const handleBrewers_Tips = (e) => setBrewers_Tips(e.target.value);
+    const handleAttenuation_Level = (e) => setAttenuation_Level(e.target.value);
+    const handleContributed_By = (e) => setContributed_By(e.target.value);
+
+    const handleSubmit = async (e) => {
+    try {
+        e.preventDefault();
+
+        const newBeer = {
+        name,
+        tagline,
+        description,
+        first_brewed,
+        brewers_tips,
+        attenuation_level,
+        contributed_by,
         };
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
+        await axios.post(`${apiURL}/new`, newBeer);
 
-            axios
-            .post(`https://ih-beers-api2.herokuapp.com/beers/new`, inputs)
-            .then((message) => {
-                console.log(message);
-                navigate("/beers");
-            })
-            .catch((e) => console.log("Error creating new beer in the API", e));
-        };
-        return (
-            <>
-            <Header />
+        setName("");
+        setTagline("");
+        setDescription("");
+        setFirst_Brewed("");
+        setBrewers_Tips("");
+        setAttenuation_Level(0);
+        setContributed_By("");
 
-            <form onSubmit={handleSubmit}>
-                <label>
-                Name
-                <input
-                    type="text"
-                    name="name"
-                    value={inputs.name || ""}
-                    placeholder="Enter beer name"
-                    required={true}
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                Tagline
-                <input
-                    type="text"
-                    name="tagline"
-                    value={inputs.tagline || ""}
-                    placeholder="Enter tagline"
-                    required={true}
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                Description
-                <input
-                    type="text"
-                    name="description"
-                    value={inputs.description || ""}
-                    placeholder="Enter description"
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                First Brewed
-                <input
-                    type="text"
-                    name="first_brewed"
-                    value={inputs.first_brewed || ""}
-                    placeholder="Enter date"
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                Brewers Tips
-                <input
-                    type="text"
-                    name="brewers_tips"
-                    value={inputs.brewers_tips || ""}
-                    placeholder="Enter tips"
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                Attenuation Level
-                <input
-                    type="number"
-                    min={10}
-                    name="attenuation_level"
-                    value={inputs.attenuation_level || ""}
-                    placeholder="10"
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <label>
-                Contributed By
-                <input
-                    type="text"
-                    name="contributed_by"
-                    value={inputs.contributed_by || ""}
-                    placeholder="Enter contributor"
-                    onChange={handleOnchange}
-                />
-                </label>
-
-                <button>Create</button>
-            </form>
-            </>
-        );
+        navigate("/");
+        } catch (err) {
+        return <p>No beers found</p>;
     }
+    };
 
-    export default NewBeer;
+    return (
+    <>
+        <Header />
+        <div
+        className="d-inline-flex flex-column justify-content-center align-items-center"
+        style={{ maxWidth: "700px" }}
+        >
+        <form onSubmit={handleSubmit}>
+            <label>Name</label>
+            <input
+            className="form-control"
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={name}
+            onChange={handleName}
+            />
+            <label>Tagline</label>
+            <input
+            className="form-control"
+            type="text"
+            name="tagline"
+            placeholder="Tagline"
+            value={tagline}
+            onChange={handleTagline}
+            />
+
+            <label className="form-label">Description</label>
+            <textarea
+            className="form-control"
+            type="text"
+            name="description"
+            placeholder="Description"
+            rows="3"
+            value={description}
+            onChange={handleDescription}
+            ></textarea>
+
+            <label>First Brewed</label>
+            <input
+            className="form-control"
+            type="text"
+            name="first_brewed"
+            placeholder="First Brewed"
+            value={first_brewed}
+            onChange={handleFirst_Brewed}
+            />
+
+            <label>Brewer Tips</label>
+            <input
+            className="form-control"
+            type="text"
+            name="brewers_tips"
+            value={brewers_tips}
+            onChange={handleBrewers_Tips}
+            />
+
+            <label>Attenuation Level</label>
+            <input
+            className="form-control"
+            type="number"
+            name="attenuation_level"
+            value={attenuation_level}
+            onChange={handleAttenuation_Level}
+            />
+
+            <label>Created By</label>
+            <input
+            className="form-control"
+            type="text"
+            name="contributed_by"
+            placeholder="Created by"
+            value={contributed_by}
+            onChange={handleContributed_By}
+            />
+            <button className="btn btn-primary btn-round">Add Beer</button>
+            </form>
+        </div>
+        </>
+    );
+}
+
+export default NewBeer;
