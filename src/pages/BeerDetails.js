@@ -31,7 +31,7 @@ function BeerDetails() {
     };
 
     fetchData();
-  }, []);
+  }, [beerId]);
 
   return (
     <div
